@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Example</title>
+</head>
+
+<body>
+<p>The value of x is {{ x }}</p>
+
+<p>The items in list are:
+    <ul>
+        {{#list}}
+            <li>{{.}}</li>
+        {{/list}}
+    </ul>
+</p>
+
+<p>The person object has name {{person.name}}, age {{person.age}}, and gender {{person.gender}}</p>
+
+<p>Let's iterate through the people object and only display those where display is true:
+    <ul>
+        {{#people}}
+            {{#display}}
+                <li>{{name}}</li>
+            {{/display}}
+        {{/people}}
+    </ul>
+</p>
+</body>
+</html>

@@ -5,7 +5,29 @@ var app = express();
 app.set('view engine', 'hjs');
 
 app.get('/', function (req, res) {
-    res.send('Hello world');
+    res.render('index', {
+        x: 10,
+        list: ['Alpha', 'Beta', 'Gamma'],
+        person: {
+            name: 'Jay Leno',
+            age: 64,
+            gender: 'Male'
+        },
+        people: [
+            {
+                name: 'Rick Ord',
+                display: true
+            },
+            {
+                name: 'Gary Gillespie',
+                display: true
+            },
+            {
+                name: 'Mia Minnes',
+                display: false
+            }
+        ]
+    });
 });
 
 var server = app.listen(3000, function () {
